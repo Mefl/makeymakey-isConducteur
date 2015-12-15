@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Le circuit électrique</title>
+	<meta charset="UTF-8">
+	<style>
+		#bloc{
+			height:400px;
+			width:800px;
+			font-size:100px;
+			text-align: center;
+		}
+		.green{
+			background-color: green;
+		}
+		.red{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Le circuit électrique</h1>
+
+	<p>Le circuit électrique est :
+		<br>
+		<div id="bloc" class="red">ouvert</div>
+	</p>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$("body").keydown(function(e) {
+		  if(e.keyCode == 37) { // left
+		    $("#bloc").addClass("green");
+		    $("#bloc").removeClass("red");
+		    $("#bloc").text("fermé");
+		  }
+		});
+		$("body").keyup(function(e) {
+		  
+		    $("#bloc").addClass("red");
+		    $("#bloc").removeClass("green");
+		    $("#bloc").text("ouvert");
+		  
+		});
+	</script>
+</body>
+</html>
